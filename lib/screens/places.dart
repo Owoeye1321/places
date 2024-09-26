@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:places/screens/new-item.dart';
 
 class Places extends StatefulWidget {
   const Places({super.key});
@@ -8,6 +9,10 @@ class Places extends StatefulWidget {
 }
 
 class _PlacesState extends State<Places> {
+  void _itemPage() {
+    Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => NewItem()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +21,7 @@ class _PlacesState extends State<Places> {
         title: const Text("Places"),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: _itemPage,
             icon: const Icon(Icons.add),
           ),
           const SizedBox(
@@ -24,6 +29,7 @@ class _PlacesState extends State<Places> {
           )
         ],
       ),
+      body: Container(),
     );
   }
 }

@@ -21,7 +21,9 @@ class NewItem extends StatelessWidget {
                 decoration: const InputDecoration(
                   label: Text("Name"),
                 ),
-                validator: (value) {},
+                validator: (value) {
+                  if (value == '') return 'Name must be provided';
+                },
                 onSaved: (value) {},
               ),
               const SizedBox(

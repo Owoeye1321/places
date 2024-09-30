@@ -9,8 +9,19 @@ class Places extends StatefulWidget {
 }
 
 class _PlacesState extends State<Places> {
-  void _itemPage() {
-    Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => NewItem()));
+  List<Places> allPlaces = [];
+
+  _addPlaces(Places places) {
+    setState(() {
+      allPlaces.add(places);
+    });
+  }
+
+  void _newPlacesPage() {
+    Navigator.of(context).push(MaterialPageRoute(
+        builder: (ctx) => NewItem(
+              addPlaces: _addPlaces,
+            )));
   }
 
   @override
@@ -21,7 +32,7 @@ class _PlacesState extends State<Places> {
         title: const Text("Places"),
         actions: [
           IconButton(
-            onPressed: _itemPage,
+            onPressed: _newPlacesPage,
             icon: const Icon(Icons.add),
           ),
           const SizedBox(

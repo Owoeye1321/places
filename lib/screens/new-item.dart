@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:places/screens/places.dart';
 
 class NewItem extends StatelessWidget {
-  const NewItem({super.key});
+  final void Function(Places places) addPlaces;
+  const NewItem({super.key, required this.addPlaces});
 
   @override
   Widget build(BuildContext context) {

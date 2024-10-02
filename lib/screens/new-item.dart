@@ -7,6 +7,7 @@ class NewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String placeName;
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
@@ -26,7 +27,9 @@ class NewItem extends StatelessWidget {
                 validator: (value) {
                   if (value == '') return 'Name must be provided';
                 },
-                onSaved: (value) {},
+                onSaved: (value) {
+                  placeName = value!;
+                },
               ),
               const SizedBox(
                 height: 10,

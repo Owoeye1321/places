@@ -1,13 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:places/screens/places.dart';
 
-class NewItem extends StatelessWidget {
+class NewItem extends StatefulWidget {
   final void Function(Places places) addPlaces;
-  const NewItem({super.key, required this.addPlaces});
+  NewItem({super.key, required this.addPlaces});
+
+  @override
+  State<NewItem> createState() => _NewItemState();
+}
+
+class _NewItemState extends State<NewItem> {
+  final _formKey = GlobalKey<FormState>();
+  var placeName = '';
+  bool _isSaving = false;
+  void savePlaces() {
+    if (_formKey.currentState!.validate()) {}
+  }
 
   @override
   Widget build(BuildContext context) {
-    String placeName;
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
@@ -25,7 +36,12 @@ class NewItem extends StatelessWidget {
                   label: Text("Name"),
                 ),
                 validator: (value) {
-                  if (value == '') return 'Name must be provided';
+                  if (value == null ||
+                      value.isEmpty ||
+                      value.trim().length <= 1 ||
+                      value.trim().length >= 50)
+                    return "Must be between 1 and 50 characters";
+                  return null;
                 },
                 onSaved: (value) {
                   placeName = value!;

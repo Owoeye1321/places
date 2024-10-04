@@ -14,7 +14,9 @@ class _NewItemState extends State<NewItem> {
   var placeName = '';
   bool _isSaving = false;
   void savePlaces() {
-    if (_formKey.currentState!.validate()) {}
+    if (_formKey.currentState!.validate()) {
+      _formKey.currentState!.save();
+    }
   }
 
   @override
@@ -27,6 +29,7 @@ class _NewItemState extends State<NewItem> {
       body: Container(
         margin: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
         child: Form(
+          key: _formKey,
           child: Column(
             children: [
               TextFormField(

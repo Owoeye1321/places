@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:places/screens/new-item.dart';
+import 'package:places/screens/new-places.dart';
 
 class Places extends StatefulWidget {
   const Places({super.key});

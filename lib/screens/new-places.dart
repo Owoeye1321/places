@@ -42,8 +42,9 @@ class _NewItemState extends State<NewItem> {
                   if (value == null ||
                       value.isEmpty ||
                       value.trim().length <= 1 ||
-                      value.trim().length >= 50)
+                      value.trim().length >= 50) {
                     return "Must be between 1 and 50 characters";
+                  }
                   return null;
                 },
                 onSaved: (value) {
@@ -56,7 +57,7 @@ class _NewItemState extends State<NewItem> {
               SizedBox(
                 width: 120,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: savePlaces,
                   child: Row(
                     children: const [
                       Icon(Icons.add),

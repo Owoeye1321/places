@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:places/screens/new-places.dart';
+import 'package:places/widgets/location-item.dart';
+
+import '../model/places.dart';
 
 class Places extends StatefulWidget {
   const Places({super.key});
@@ -9,19 +12,24 @@ class Places extends StatefulWidget {
 }
 
 class _PlacesState extends State<Places> {
-  List<Places> allPlaces = [];
+  List<Location> allPlaces = [];
 
-  _addPlaces(Places places) {
+  _addPlaces(Location location) {
     setState(() {
-      allPlaces.add(places);
+      allPlaces.add(location);
     });
+    print(allPlaces);
   }
 
-  void _newPlacesPage() {
-    Navigator.of(context).push(MaterialPageRoute(
+  void _newPlacesPage() async {
+    var response = await Navigator.of(context).push<Location>(
+      MaterialPageRoute(
         builder: (ctx) => NewItem(
-              addPlaces: _addPlaces,
-            )));
+          addPlaces: _addPlaces,
+        ),
+      ),
+    );
+    _addPlaces(response!);
   }
 
   @override
@@ -40,7 +48,15 @@ class _PlacesState extends State<Places> {
           )
         ],
       ),
-      body: Container(),
+      body: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+        child: ListView.builder(
+          itemCount: allPlaces.length,
+          itemBuilder: (context, index) => LocationItem(
+            location: allPlaces[index],
+          ),
+        ),
+      ),
     );
   }
 }

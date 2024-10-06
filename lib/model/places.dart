@@ -1,4 +1,4 @@
-class Places {
+class Location {
   String places;
-  Places(this.places);
+  Location(this.places);
 }

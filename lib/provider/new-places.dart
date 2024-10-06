@@ -1,3 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-var newPlacesProvider = Provider((ref) => null)
+import '../model/places.dart';
+
+var newPlacesProvider = Provider<Location>((ref) => {});

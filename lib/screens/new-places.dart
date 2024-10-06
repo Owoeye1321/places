@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:places/model/places.dart';
 import 'package:places/screens/places.dart';
 
 class NewItem extends StatefulWidget {
-  final void Function(Places places) addPlaces;
+  final void Function(Location places) addPlaces;
   NewItem({super.key, required this.addPlaces});
 
   @override
@@ -16,6 +17,7 @@ class _NewItemState extends State<NewItem> {
   void savePlaces() {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
+      Navigator.of(context).pop(Location(placeName));
     }
   }
 

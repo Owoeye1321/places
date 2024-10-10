@@ -4,9 +4,21 @@ import '../model/places.dart';
 
 class NewPlacesStateNotifier extends StateNotifier<List<Location>> {
   NewPlacesStateNotifier() : super([]);
+  getPlaces() {
+    return state;
+  }
 
-  getPlaces() {}
-  addPlaces(){}
+  bool addPlaces(Location location) {
+    if (state.contains(location)) {
+      return false;
+    } else {
+      state = [...state, location];
+      return true;
+    }
+  }
 }
 
-var newPlacesProvider = StateNotifierProvider();
+var newPlacesProvider =
+    StateNotifierProvider<NewPlacesStateNotifier, List<Location>>(
+  (ref) => NewPlacesStateNotifier(),
+);

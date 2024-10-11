@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:places/screens/new-places.dart';
 import 'package:places/widgets/location-item.dart';
-
+import 'package:places/provider/new-places.dart';
 import '../model/places.dart';
 
-class Places extends StatefulWidget {
+class Places extends ConsumerStatefulWidget {
   const Places({super.key});
 
   @override
-  State<Places> createState() => _PlacesState();
+  ConsumerState<Places> createState() => _PlacesState();
 }
 
-class _PlacesState extends State<Places> {
+class _PlacesState extends ConsumerState<Places> {
   List<Location> allPlaces = [];
 
   _addPlaces(Location location) {
@@ -21,19 +22,26 @@ class _PlacesState extends State<Places> {
     print(allPlaces);
   }
 
+// @override
+//   void initState() {
+//     // TODO: implement initState
+//     super.initState();
+//   }
+
   void _newPlacesPage() async {
-    var response = await Navigator.of(context).push<Location>(
+     Navigator.of(context).push<Location>(
       MaterialPageRoute(
         builder: (ctx) => NewItem(
           addPlaces: _addPlaces,
         ),
       ),
     );
-    _addPlaces(response!);
+    //_addPlaces(response!);
   }
 
   @override
   Widget build(BuildContext context) {
+    allPlaces  = ref.watch(placesProvider);
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,

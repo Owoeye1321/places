@@ -1,23 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:places/model/places.dart';
-import 'package:places/screens/places.dart';
+import 'package:places/provider/new-places.dart';
 
-class NewItem extends StatefulWidget {
+class NewItem extends ConsumerStatefulWidget {
   final void Function(Location places) addPlaces;
   NewItem({super.key, required this.addPlaces});
 
   @override
-  State<NewItem> createState() => _NewItemState();
+  ConsumerState<NewItem> createState() => _NewItemState();
 }
 
-class _NewItemState extends State<NewItem> {
+class _NewItemState extends ConsumerState<NewItem> {
   final _formKey = GlobalKey<FormState>();
   var placeName = '';
   bool _isSaving = false;
   void savePlaces() {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
-      Navigator.of(context).pop(Location(placeName));
+      ref.read(placesProvider.notifier).addPlaces(Location(placeName));
+      Navigator.of(context).pop();
     }
   }
 

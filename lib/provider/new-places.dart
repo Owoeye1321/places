@@ -18,7 +18,7 @@ class NewPlacesStateNotifier extends StateNotifier<List<Location>> {
   }
 }
 
-var newPlacesProvider =
+var placesProvider =
     StateNotifierProvider<NewPlacesStateNotifier, List<Location>>(
   (ref) => NewPlacesStateNotifier(),
 );

@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:places/screens/new-places.dart';
 import 'package:places/widgets/location-item.dart';
 import 'package:places/provider/new-places.dart';
-import '../model/places.dart';
+import '../model/place.dart';
 
 class Places extends ConsumerStatefulWidget {
   const Places({super.key});
@@ -15,24 +15,11 @@ class Places extends ConsumerStatefulWidget {
 class _PlacesState extends ConsumerState<Places> {
   List<Location> allPlaces = [];
 
-  _addPlaces(Location location) {
-    setState(() {
-      allPlaces.add(location);
-    });
-    print(allPlaces);
-  }
-
-// @override
-//   void initState() {
-//     // TODO: implement initState
-//     super.initState();
-//   }
 
   void _newPlacesPage() async {
-     Navigator.of(context).push<Location>(
+     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (ctx) => NewItem(
-          addPlaces: _addPlaces,
         ),
       ),
     );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../model/places.dart';
+import '../model/place.dart';
 
 class AboutLocation extends StatelessWidget {
   final Location location;
@@ -11,7 +11,7 @@ class AboutLocation extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
-        title: Text(location.places),
+        title: Text(location.place),
       ),
       body: Container(),
     );

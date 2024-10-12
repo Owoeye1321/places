@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:places/model/places.dart';
+import 'package:places/model/place.dart';
 import 'package:places/screens/about-location.dart';
 
 class LocationItem extends StatelessWidget {
@@ -18,7 +18,7 @@ class LocationItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       title: Text(
-        location.places,
+        location.place,
         style: TextStyle(color: Theme.of(context).colorScheme.onBackground),
       ),
       onTap: () {

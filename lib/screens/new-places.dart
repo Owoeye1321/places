@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:places/model/place.dart';
 import 'package:places/provider/new-places.dart';
+import 'package:places/widgets/image_input.dart';
 
 class NewItem extends ConsumerStatefulWidget {
   //final void Function(Location places) addPlaces;
@@ -58,9 +59,8 @@ class _NewItemState extends ConsumerState<NewItem> {
               const SizedBox(
                 height: 10,
               ),
-              SizedBox(
-                width: 120,
-                child: ElevatedButton.icon(
+              ImageInput(),
+               ElevatedButton.icon(
                   onPressed: savePlaces,
                   icon: const Icon(Icons.add),
                    label:
@@ -72,7 +72,6 @@ class _NewItemState extends ConsumerState<NewItem> {
                    // ],
                  // ),
                 ),
-              )
             ],
           ),
         ),

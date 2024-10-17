@@ -14,7 +14,9 @@ class ImageInput extends StatefulWidget{
 class _ImageInput extends State<ImageInput>{
   _ImageInput();
 
-void _takePicture(){}
+void _takePicture(){
+  //this function initiate the camera
+}
 
 @override
 Widget build(BuildContext context){

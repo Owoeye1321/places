@@ -13,7 +13,7 @@ class AboutLocation extends StatelessWidget {
         centerTitle: false,
         title: Text(location.place),
       ),
-      body: Container(),
+      body:  const Center(child: Text("Hello there")),
     );
   }
 }

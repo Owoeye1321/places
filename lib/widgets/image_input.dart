@@ -1,6 +1,7 @@
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class ImageInput extends StatefulWidget{
   ImageInput({super.key});
@@ -16,6 +17,8 @@ class _ImageInput extends State<ImageInput>{
 
 void _takePicture(){
   //this function initiate the camera
+  final imagePicker = ImagePicker();
+  imagePicker.pickImage(source: ImageSource.camera, maxWidth: 600);
 }
 
 @override

@@ -1,7 +1,10 @@
+import 'dart:io';
+
 import 'package:uuid/uuid.dart';
 const uuid = Uuid();
 class Location {
   String place;
   String id;
-  Location({required this.place}):  id = uuid.v4();
+  File? image;
+  Location({required this.place, required this.image}):  id = uuid.v4();
 }

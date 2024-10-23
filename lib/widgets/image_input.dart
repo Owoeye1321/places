@@ -18,7 +18,7 @@ class _ImageInput extends State<ImageInput> {
     //this function initiate the camera
     final imagePicker = ImagePicker();
     final pickedImage =
-        await imagePicker.pickImage(source: ImageSource.camera, maxWidth: 600);
+        await imagePicker.pickImage(source: ImageSource.gallery, maxWidth: 600);
 
     if (pickedImage == null) {
       return;

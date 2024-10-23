@@ -13,7 +13,9 @@ class AboutLocation extends StatelessWidget {
         centerTitle: false,
         title: Text(location.place),
       ),
-      body:  const Center(child: Text("Hello there")),
+      body: Stack(children: [
+        Image.file(location.image!, fit: BoxFit.cover, width: double.infinity, height: double.infinity,)
+      ]),
     );
   }
 }

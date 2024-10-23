@@ -17,6 +17,10 @@ class LocationItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      leading: CircleAvatar(
+        radius: 26,
+        backgroundImage: FileImage(location.image!),
+      ),
       title: Text(
         location.place,
         style: TextStyle(color: Theme.of(context).colorScheme.onBackground),

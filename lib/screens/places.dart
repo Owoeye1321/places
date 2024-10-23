@@ -44,7 +44,7 @@ class _PlacesState extends ConsumerState<Places> {
         ],
       ),
       body: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+        margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
         child: ListView.builder(
           itemCount: allPlaces.length,
           itemBuilder: (context, index) => LocationItem(

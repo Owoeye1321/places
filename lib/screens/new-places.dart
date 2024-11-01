@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:places/model/place.dart';
 import 'package:places/provider/new-places.dart';
 import 'package:places/widgets/image_input.dart';
+import 'package:places/widgets/location-input.dart';
 
 class NewItem extends ConsumerStatefulWidget {
   //final void Function(Location places) addPlaces;
@@ -65,6 +66,9 @@ class _NewItemState extends ConsumerState<NewItem> {
               ImageInput(onPickImage: (image) {
                 seletedImage = image;
               }),
+              SizedBox(height: 10),
+              LocationInput(),
+              SizedBox(height: 16),
                ElevatedButton.icon(
                   onPressed: savePlaces,
                   icon: const Icon(Icons.add),

@@ -5,15 +5,15 @@ import 'package:places/widgets/location-item.dart';
 import 'package:places/provider/new-places.dart';
 import '../model/place.dart';
 
-class Places extends ConsumerStatefulWidget {
-  const Places({super.key});
+class Home extends ConsumerStatefulWidget {
+  const Home({super.key});
 
   @override
-  ConsumerState<Places> createState() => _PlacesState();
+  ConsumerState<Home> createState() => _HomeState();
 }
 
-class _PlacesState extends ConsumerState<Places> {
-  List<Location> allPlaces = [];
+class _HomeState extends ConsumerState<Home> {
+  List<Places> allPlaces = [];
 
 
   void _newPlacesPage() async {

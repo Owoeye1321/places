@@ -4,6 +4,8 @@
 <dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>The location for your favourite place</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>The location for your favourite place</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Pick your favourite place image</string>
 	<key>NSCameraUsageDescription</key>

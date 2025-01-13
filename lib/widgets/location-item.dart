@@ -3,10 +3,10 @@ import 'package:places/model/place.dart';
 import 'package:places/screens/about-location.dart';
 
 class LocationItem extends StatelessWidget {
-  final Location location;
+  final Places location;
   const LocationItem({super.key, required this.location});
 
-  void _aboutLocation(context, Location location) {
+  void _aboutLocation(context, Places location) {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => AboutLocation(location: location),

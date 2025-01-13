@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Great Places',
       theme: theme,
-      home: Places(),
+      home: Home(),
     );
   }
 }

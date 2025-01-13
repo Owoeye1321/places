@@ -23,7 +23,7 @@ class _NewItemState extends ConsumerState<NewItem> {
   void savePlaces() {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
-      ref.read(placesProvider.notifier).addPlaces(Location( place:placeName, image: seletedImage));
+      //ref.read(placesProvider.notifier).addPlaces(Location( place:placeName, image: seletedImage));
       Navigator.of(context).pop();
     }
   }

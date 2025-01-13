@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../model/place.dart';
 
 class AboutLocation extends StatelessWidget {
-  final Location location;
+  final Places location;
   const AboutLocation({super.key, required this.location});
 
   @override
